@@ -28,7 +28,7 @@ import Header from '../sections/Header.astro'
     />
   </head>
   <body class="min-h-screen">
-    <!-- <Header /> -->
+    <Header />
     <slot />
   </body>
 </html>
@@ -50,8 +50,7 @@ import Header from '../sections/Header.astro'
     margin: 0;
     display: grid;
     grid-template-columns: auto;
-    width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: var(--color-background-light);
   }
