@@ -1,6 +1,6 @@
-<section id="serveis" class="mb-24 bg-slate-50">
-  <div class="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto px-6">
-    <div class="space-y-8">
+<section id="serveis" class="py-24 bg-slate-50 flex flex-col gap-20">
+  <div class="grid lg:grid-cols-6 gap-16 items-center max-w-7xl mx-auto">
+    <div class="space-y-8 col-span-3">
       <div
         class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20"
       >
@@ -13,13 +13,16 @@
         Serveis
       </h1>
       <div>
-        <p class="text-xl text-slate-500 leading-relaxed max-w-lg text-balance">
-          Oferim serveis de psicologia dirigits a nens i adolescents. Estem especialitzades en el
-          Trastorn de l’Espectre de l’Autisme, tot i que ens adaptem a cada infant per acompanyar
-          dificultats emocionals, desenvolupar habilitats socials i fer front a altres reptes.
+        <p class="text-xl text-slate-500 leading-relaxed text-balance">
+          <em
+            >Estem especialitzades en el Trastorn de l'Espectre de l'Autisme, tot i que ens adaptem
+            a</em
+          >
+          cada infant per acompanyar dificultats emocionals, desenvolupar habilitats socials i fer front
+          a altres reptes.
         </p>
 
-        <p class="mt-2 text-xl text-slate-500 leading-relaxed max-w-lg text-balance">
+        <p class="mt-2 text-xl text-slate-500 leading-relaxed text-balance">
           Realitzem valoracions diagnòstiques, assessorament familiar i intervencions específiques,
           oferint una atenció adaptada i personalitzada, tant en <span
             class="text-primary font-bold">Català, Castellà i Anglès</span
@@ -29,7 +32,7 @@
     </div>
 
     <div
-      class="relative rounded-3xl overflow-hidden aspect-square shadow-2xl border border-white/10 flex items-center justify-center p-6 h-4/5"
+      class="relative rounded-3xl overflow-hidden aspect-square shadow-2xl border border-white/10 flex items-center justify-center p-6 h-4/5 col-span-3"
     >
       <img
         alt="3D Blautea Premium Visual"
@@ -38,11 +41,9 @@
       />
     </div>
   </div>
-</section>
-<section class="mb-32 max-w-7xl mx-auto">
-  <div class="grid lg:grid-cols-6 gap-12 items-stretch">
-    <!-- TEXTO (col 1) -->
-    <div class="col-span-3">
+
+  <div class="grid lg:grid-cols-6 gap-12 max-w-7xl mx-auto items-center">
+    <div class="col-span-3 flex flex-col">
       <h2 class="text-4xl md:text-5xl font-black tracking-tight mb-6 text-slate-900">
         Avaluacions psicològiques
       </h2>
@@ -57,69 +58,66 @@
       </div>
     </div>
 
-    <!-- NEURO -->
-    <div class="glass-card p-8 rounded-3xl group col-span-3 hover:border-primary/40 transition-all">
-      <div
-        class="size-14 bg-secondary/5 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
-      >
-        <span class="material-symbols-outlined text-3xl text-secondary">child_care</span>
-      </div>
-      <h3 class="text-xl font-extrabold mb-3">Neurodesenvolupament</h3>
-      <p class="text-md text-slate-500 leading-relaxed">
-        Seguiment integral del desenvolupament infantil i detecció precoç de dificultats de
-        maduració.
-      </p>
-      <ul class="space-y-2 text-sm mt-6">
+    <div class="glass-card p-8 rounded-3xl col-span-3 border-primary/40 h-fit">
+      <ul class="space-y-2
+      text-sm
+      mt-6">
         <li class="flex gap-3">
           <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
-          <span class="text-slate-600">Diagnòstic i intervenció TEA adaptada.</span>
+          <span class="text-slate-600">Trastorn de l'Espectre Autista (TEA)</span>
         </li>
         <li class="flex gap-3">
           <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
-          <span class="text-slate-600">Terapeuta certificada ESDM i coaching P-ESDM.</span>
+          <span class="text-slate-600"
+            >Trastorn per Dèficit d'Atenció amb/sense Hiperactivitat (TDAH)</span
+          >
         </li>
         <li class="flex gap-3">
           <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
-          <span class="text-slate-600">Salut mental a l'Hospital Sant Joan de Déu.</span>
+          <span class="text-slate-600">Neurodesenvolupament</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
+          <span class="text-slate-600">Capacitat cognitiva</span>
         </li>
       </ul>
     </div>
   </div>
-</section>
 
-<section class="mb-32 max-w-7xl mx-auto">
-  <div class="grid lg:grid-cols-6 gap-12 items-stretch">
-    <!-- TEXTO (col 1) -->
+  <div class="grid lg:grid-cols-6 gap-12 max-w-7xl mx-auto items-center">
     <div class="col-span-3">
       <h3 class="text-4xl font-black tracking-tight mb-6 text-slate-900">
         Modalitats d'intervenció
       </h3>
       <p class="text-slate-500 text-lg max-w-md leading-relaxed">
-        Processos diagnòstics individualitzats i adaptats a cada infant, permetent-nos orientar
-        adequadament les sessions psicològiques i dissenyar intervencions eficaces per nens i
-        adolescents.
+        Sessions d’intervenció adaptades a les necessitats de cada infant i familia, treballant de
+        forma flexible i col·laborativa, assegurant una atenció integral que afavoreixi el benestar
+        emocional al llarg de cada etapa evolutiva.
       </p>
+       <div class="mt-8 flex items-center gap-4 text-primary">
+        <span class="h-px w-12 bg-primary/30"></span>
+        <span class="text-sm font-bold uppercase tracking-widest">Pràctiques basades en l’evidència</span>
+      </div>
     </div>
 
-    <!-- NEURO -->
-    <div class="glass-card p-8 rounded-3xl group col-span-3 hover:border-primary/40 transition-all">
+    <div class="glass-card p-8 rounded-3xl col-span-3 border-primary/40">
       <ul class="space-y-2 text-sm mt-6">
         <li class="flex gap-3">
           <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
-          <span class="text-slate-600">Sessions presencials individualitzades.</span>
+          <span class="text-slate-600">Sessions presencials individualitzades</span>
         </li>
         <li class="flex gap-3">
           <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
-          <span class="text-slate-600">Sessions online individualitzades.</span>
+          <span class="text-slate-600">Sessions online individualitzades</span>
         </li>
         <li class="flex gap-3">
           <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
-          <span class="text-slate-600">Sessions presencials grupals.</span>
+          <span class="text-slate-600">Sessions presencials grupals</span>
         </li>
         <li class="flex gap-3">
           <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
           <span class="text-slate-600"
-            >Sessions d’assessorament a pares de manera individualitzada o en format grupal.</span
+            >Sessions d’assessorament a pares de manera individualitzada o en format grupal</span
           >
         </li>
         <li class="flex gap-3">
