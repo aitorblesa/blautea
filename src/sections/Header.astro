@@ -1,7 +1,9 @@
-<header class="max-w-7xl mx-auto py-6 flex items-center justify-between w-full sticky top-0 z-10">
+<header
+  class="max-w-7xl mx-auto py-6 px-6 flex items-center justify-between w-full sticky top-0 z-10"
+>
   <img alt="Blautea Logo Icon" class="h-16" src="/BlauteaLogo.webp" />
 
-  <nav class="hidden md:flex items-center gap-1 glass-card px-6 py-2 rounded-full shadow-sm">
+  <nav class="hidden lg:flex items-center gap-1 glass-card px-6 py-2 rounded-full shadow-sm">
     <a
       class="px-4 py-2 text-sm font-bold text-primary decoration-2 hover:text-primary transition-colors"
       href="#">Inici</a
@@ -36,9 +38,14 @@
   </nav>
 
   <a
-    class="bg-white 800 border border-primary text-primary px-6 py-2.5 rounded-full text-sm font-bold hover:bg-primary hover:text-white transition-all duration"
+    class="bg-white 800 border border-primary text-primary px-6 py-2.5 lg:inline hidden rounded-full text-sm font-bold hover:bg-primary hover:text-white transition-all duration"
     href="#"
   >
     Concertar una Cita
   </a>
+  <button
+    class="w-10 h-10 flex lg:hidden items-center justify-center rounded-full bg-slate-100  text-slate-600 "
+  >
+    <span class="material-symbols-outlined">menu</span>
+  </button>
 </header>
