@@ -1,22 +1,37 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import Hero from '@/sections/Hero.astro'
-import HeroCards from '@/sections/HeroCards.astro'
-import Methology from '@/sections/Methology.astro'
-import Services from '@/sections/Services.astro'
-import Team from '@/sections/Team.astro'
-import Contact from '@/sections/Contact.astro'
-import Footer from '@/sections/Footer.astro'
-import FAQ from '@/sections/FAQ.astro'
+import Hero from '@/components/Hero.astro'
+import HeroCards from '@/components/HeroCards.astro'
+import Methology from '@/components/Methology.astro'
+import Services from '@/components/Services.astro'
+import Team from '@/components/Team.astro'
+import Contact from '@/components/Contact.astro'
+import Footer from '@/components/Footer.astro'
+import FAQ from '@/components/FAQ.astro'
+import SectionContainer from '@/components/SectionContainer.astro'
 ---
 
 <Layout>
-  <Hero />
-  <HeroCards />
-  <Services />
-  <Methology />
-  <Team />
-  <Contact />
-  <FAQ />
-  <Footer />
+  <main>
+    <SectionContainer id="">
+      <Hero />
+    </SectionContainer>
+    <HeroCards />
+    <SectionContainer id="serveis">
+      <Services />
+    </SectionContainer>
+    <SectionContainer id="metodologia">
+      <Methology />
+    </SectionContainer>
+    <SectionContainer id="equip">
+      <Team />
+    </SectionContainer>
+    <SectionContainer id="contacte">
+      <Contact />
+    </SectionContainer>
+    <SectionContainer id="preguntes-frequents">
+      <FAQ />
+    </SectionContainer>
+    <Footer />
+  </main>
 </Layout>
