@@ -1,11 +1,65 @@
+---
+import { getI18N } from '@/i18n'
+import CatalanFlag from '@/components/flags/Catalan.astro'
+import SpanishFlag from '@/components/flags/Spanish.astro'
+import EnglishFlag from '@/components/flags/English.astro'
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+const activeLocale = currentLocale ?? 'ca'
+
+const languageOptions: Array<{
+  code: string
+  name: string
+  href: string
+  flag: typeof CatalanFlag
+}> = [
+  { code: 'ca', name: i18n.flags.Catalan, href: '/', flag: CatalanFlag },
+  { code: 'es', name: i18n.flags.Spanish, href: '/es', flag: SpanishFlag },
+  { code: 'en', name: i18n.flags.English, href: '/en', flag: EnglishFlag },
+]
+
+const currentLanguage =
+  languageOptions.find((lang) => lang.code === activeLocale) ?? languageOptions[0]
+const CurrentFlag = currentLanguage.flag
+
+const navItems = [
+  { name: i18n.header.home, href: '#', targetId: '' },
+  {
+    name: i18n.header.services,
+    href: `#${i18n.header.servicesRef}`,
+    targetId: i18n.header.servicesRef,
+  },
+  {
+    name: i18n.header.methodology,
+    href: `#${i18n.header.methodologyRef}`,
+    targetId: i18n.header.methodologyRef,
+  },
+  {
+    name: i18n.header.team,
+    href: `#${i18n.header.teamRef}`,
+    targetId: i18n.header.teamRef,
+  },
+  {
+    name: i18n.header.contact,
+    href: `#${i18n.header.contactRef}`,
+    targetId: i18n.header.contactRef,
+  },
+  {
+    name: i18n.header.faqs,
+    href: `#${i18n.header.faqsRef}`,
+    targetId: i18n.header.faqsRef,
+  },
+]
+---
+
 <header
   class="max-w-7xl mx-auto py-6 px-6 flex items-center justify-between w-full sticky top-0 z-10"
 >
-  <img alt="Blautea Logo Icon" class="h-16" src="/BlauteaLogo.webp" />
+  <img alt={i18n.header.logoAlt} class="h-16" src="/BlauteaLogo.webp" />
 
   <input id="mobile-menu-toggle" type="checkbox" class="peer hidden" />
 
-  <!-- Nav única: desktop inline + mobile dropdown -->
   <nav
     class="glass-card origin-top transition-all duration-200 ease-out
     flex-col lg:flex-row
@@ -14,53 +68,98 @@
     opacity-0 scale-95 -translate-y-2 pointer-events-none
     peer-checked:flex peer-checked:opacity-100 peer-checked:scale-100 peer-checked:translate-y-0 peer-checked:pointer-events-auto"
   >
-    <a
-      class="px-4 py-2 text-sm hover:text-primary transition-colors rounded-lg"
-      href="#"
-      aria-label="">Inici</a
-    >
-    <a
-      class="px-4 py-2 text-sm hover:text-primary transition-colors rounded-lg"
-      href="#serveis"
-      aria-label="serveis">Serveis</a
-    >
-    <a
-      class="px-4 py-2 text-sm hover:text-primary transition-colors rounded-lg"
-      href="#metodologia"
-      aria-label="metodologia">Metodologia</a
-    >
-    <a
-      class="px-4 py-2 text-sm hover:text-primary transition-colors rounded-lg"
-      href="#equip"
-      aria-label="equip">Equip</a
-    >
-    <a
-      class="px-4 py-2 text-sm hover:text-primary transition-colors rounded-lg"
-      href="#contacte"
-      aria-label="contacte">Contacte</a
-    >
-    <a
-      class="px-4 py-2 text-sm hover:text-primary transition-colors rounded-lg"
-      href="#preguntes-frequents"
-      aria-label="preguntes-frequents">FAQ</a
-    >
-    <div
-      class="hidden lg:flex items-center gap-2 ml-4 border-l border-slate-200 pl-4 cursor-pointer"
-    >
-      <img alt="Bandera de Catalunya" class="h-6 w-6" src="/flags/cat.svg" />
-      <span class="material-icons-outlined text-sm text-slate-400 hover:text-primary"
-        >expand_more</span
+    {
+      navItems.map(({ href, name, targetId }) => (
+        <a
+          class="px-4 py-2 text-sm hover:text-primary transition-colors rounded-lg"
+          href={href}
+          data-target-id={targetId}
+          aria-label={name}
+        >
+          {name}
+        </a>
+      ))
+    }
+    <div class="hidden lg:block relative ml-4 border-l border-slate-200 pl-4">
+      <button
+        type="button"
+        class="flex items-center gap-2 text-sm rounded-lg px-2 py-1.5 hover:bg-slate-100 hover:cursor-pointer transition-colors"
+        data-lang-toggle
+        aria-expanded="false"
       >
+        <span class="inline-flex h-6 w-6 items-center justify-center overflow-hidden rounded">
+          <CurrentFlag />
+        </span>
+        <span class="lg:hidden">{currentLanguage.name}</span>
+        <span class="material-icons-outlined text-sm text-slate-400">expand_more</span>
+      </button>
+      <div
+        class="hidden absolute right-0 top-12 min-w-40 rounded-xl border border-slate-200 bg-white shadow-lg p-2 z-20"
+        data-lang-menu
+      >
+        {
+          languageOptions.map((lang) => {
+            const Flag = lang.flag
+            return (
+              <a
+                class={`flex items-center gap-2 rounded-lg px-3 py-2 text-sm hover:bg-slate-100 transition-colors ${
+                  lang.code === activeLocale ? 'text-primary font-semibold' : 'text-slate-700'
+                }`}
+                href={lang.href}
+              >
+                <span class="inline-flex h-5 w-5 items-center justify-center overflow-hidden rounded">
+                  <Flag />
+                </span>
+                <span>{lang.name}</span>
+              </a>
+            )
+          })
+        }
+      </div>
+    </div>
+    <div class="lg:hidden border-t border-slate-200 mt-2 pt-2">
+      <button
+        type="button"
+        class="w-full flex items-center justify-between rounded-lg px-3 py-2 text-sm hover:bg-slate-100 transition-colors"
+        data-lang-toggle
+        aria-expanded="false"
+      >
+        <span class="flex items-center gap-2">
+          <span class="inline-flex h-5 w-5 items-center justify-center overflow-hidden rounded">
+            <CurrentFlag />
+          </span>
+          <span>{currentLanguage.name}</span>
+        </span>
+        <span class="material-icons-outlined text-sm text-slate-400">expand_more</span>
+      </button>
+      <div class="hidden mt-1 px-1 pb-1" data-lang-menu>
+        {
+          languageOptions.map((lang) => {
+            const Flag = lang.flag
+            return (
+              <a
+                class={`flex items-center gap-2 rounded-lg px-3 py-2 text-sm hover:bg-slate-100 transition-colors ${
+                  lang.code === activeLocale ? 'text-primary font-semibold' : 'text-slate-700'
+                }`}
+                href={lang.href}
+              >
+                <span class="inline-flex h-5 w-5 items-center justify-center overflow-hidden rounded">
+                  <Flag />
+                </span>
+                <span>{lang.name}</span>
+              </a>
+            )
+          })
+        }
+      </div>
     </div>
   </nav>
 
   <span
     class="bg-white border border-primary text-primary px-6 py-2.5 hidden lg:inline-block rounded-full text-sm font-bold invisible"
   >
-    Concertar una Cita
   </span>
 
-  <!-- Icona obrir -->
   <label
     for="mobile-menu-toggle"
     class="w-10 h-10 flex lg:hidden items-center justify-center rounded-full bg-slate-100 text-slate-600 cursor-pointer peer-checked:hidden"
@@ -83,7 +182,6 @@
     </svg>
   </label>
 
-  <!-- Icona tancar -->
   <label
     for="mobile-menu-toggle"
     class="w-10 h-10 hidden lg:hidden items-center justify-center rounded-full bg-slate-100 text-slate-600 cursor-pointer peer-checked:flex"
@@ -107,20 +205,18 @@
 </header>
 
 <script>
-  const sections = document.querySelectorAll('section')
-  const navItems = document.querySelectorAll('header nav a')
+  const sections = document.querySelectorAll('section[id]')
+  const navItems = document.querySelectorAll('header nav a[data-target-id]')
 
   const callback = (entries: any[]) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        navItems.forEach((item) => {
-          if (item.getAttribute('aria-label') == entry.target.id) {
-            item.classList.add('text-primary')
-          } else {
-            item.classList.remove('text-primary')
-          }
-        })
-      }
+      if (!entry.isIntersecting) return
+
+      navItems.forEach((item) => {
+        const targetId = item.getAttribute('data-target-id')
+        const isActive = Boolean(targetId) && targetId === entry.target.id
+        item.classList.toggle('text-primary', isActive)
+      })
     })
   }
 
@@ -139,4 +235,30 @@
       sections.forEach((section) => observer.observe(section))
     }
   }
+
+  const toggles = document.querySelectorAll('[data-lang-toggle]')
+  toggles.forEach((toggle) => {
+    const container = toggle.parentElement
+    if (!container) return
+    const menu = container.querySelector('[data-lang-menu]')
+    if (!menu) return
+
+    toggle.addEventListener('click', () => {
+      const willOpen = menu.classList.contains('hidden')
+      menu.classList.toggle('hidden')
+      toggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false')
+    })
+  })
+
+  document.addEventListener('click', (event) => {
+    const target = event.target as Node
+    toggles.forEach((toggle) => {
+      const container = toggle.parentElement
+      const menu = container?.querySelector('[data-lang-menu]')
+      if (!container || !menu) return
+      if (container.contains(target)) return
+      menu.classList.add('hidden')
+      toggle.setAttribute('aria-expanded', 'false')
+    })
+  })
 </script>
