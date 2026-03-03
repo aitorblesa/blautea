@@ -1,19 +1,24 @@
+---
+import { getI18N } from '@/i18n'
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+const contact = i18n.contact
+---
+
 <div class="bg-background-light font-sans transition-colors duration-300">
   <div class="max-w-7xl mx-auto px-6 pt-12 lg:py-16">
     <div class="text-center mb-16">
       <h1 class="text-5xl lg:text-7xl font-extrabold text-primary mt-4 leading-tight">
-        Contacta'ns
+        {contact.title}
       </h1>
-      <span class="text-lg text-accent"
-        >Escriu-nos o truca’ns explicant el teu motiu de consulta i rebràs una resposta el més aviat
-        possible</span
-      >
+      <span class="text-lg text-accent">{contact.subtitle}</span>
     </div>
 
     <article class="grid lg:grid-cols-2 gap-8">
       <div class="bg-white p-8 rounded-3xl contact-card-shadow border border-slate-100">
         <h3 class="text-2xl font-bold mb-6 text-accent-teal dark:text-primary">
-          Informació de contacte
+          {contact.cardTitle}
         </h3>
         <div class="space-y-8">
           <div class="flex items-start gap-4">
@@ -23,10 +28,10 @@
               <span class="material-symbols-outlined">location_on</span>
             </div>
             <div>
-              <h4 class="font-bold text-slate-800">Ubicació</h4>
+              <h4 class="font-bold text-slate-800">{contact.locationLabel}</h4>
               <p class="text-slate-500">
                 <a href="https://maps.app.goo.gl/WsYPwi4JFfDuYX3F6" class="hover:text-primary">
-                  C/ Granada del Penedès, 19-21, Esc. B, Entres. 1ª, 08006 Barcelona
+                  {contact.locationText}
                 </a>
               </p>
             </div>
@@ -38,11 +43,11 @@
               <span class="material-symbols-outlined">call</span>
             </div>
             <div>
-              <h4 class="font-bold text-slate-800">Telèfons</h4>
+              <h4 class="font-bold text-slate-800">{contact.phonesLabel}</h4>
               <div class="flex gap-2">
-                <p class="text-slate-500">+34 676 789 166 (Maria)</p>
+                <p class="text-slate-500">{contact.phoneMaria}</p>
                 <span>/</span>
-                <p class="text-slate-500">+34 678 482 418 (Bea)</p>
+                <p class="text-slate-500">{contact.phoneBea}</p>
               </div>
             </div>
           </div>
@@ -53,8 +58,8 @@
               <span class="material-symbols-outlined">mail</span>
             </div>
             <div>
-              <h4 class="font-bold text-slate-800">Email</h4>
-              <p class="text-slate-500">info@blautea.com</p>
+              <h4 class="font-bold text-slate-800">{contact.emailLabel}</h4>
+              <p class="text-slate-500">{contact.email}</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
@@ -64,8 +69,8 @@
               <span class="material-symbols-outlined">schedule</span>
             </div>
             <div>
-              <h4 class="font-bold text-slate-800">Horari</h4>
-              <p class="text-slate-500">Dilluns a Divendres: 9:00 - 20:00</p>
+              <h4 class="font-bold text-slate-800">{contact.scheduleLabel}</h4>
+              <p class="text-slate-500">{contact.scheduleText}</p>
             </div>
           </div>
           <div class="flex items-start gap-4">
@@ -79,7 +84,7 @@
         class="relative w-full h-3/4 lg:h-full rounded-3xl overflow-hidden shadow-2xl shadow-primary/10"
       >
         <img
-          alt="Map representation of Barcelona"
+          alt={contact.officeImageAlt}
           class="w-full h-full object-cover filter brightness-90 contrast-125 saturate-50 grayscale-[0.2]"
           src="/sala_espera_BLAUTEA.webp"
         />

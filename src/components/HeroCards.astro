@@ -1,3 +1,11 @@
+---
+import { getI18N } from '@/i18n'
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+const cards = i18n.heroCards.items
+---
+
 <section class="w-full bg-background-light pb-24 px-6">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 -mt-12">
     <div class="glass-card p-8 rounded-3xl group hover:border-primary/50 transition-colors">
@@ -6,10 +14,9 @@
       >
         <span class="material-symbols-outlined text-3xl">diversity_2</span>
       </div>
-      <h3 class="text-xl font-bold mb-3">Atenció propera</h3>
+      <h3 class="text-xl font-bold mb-3">{cards[0].title}</h3>
       <p class="text-slate-600 text-md leading-relaxed">
-        Oferim una atenció propera, respectuosa i compromesa amb el benestar de cada persona i el
-        seu entorn.
+        {cards[0].description}
       </p>
     </div>
     <div class="glass-card p-8 rounded-3xl group hover:border-primary/50 transition-colors">
@@ -18,10 +25,9 @@
       >
         <span class="material-symbols-outlined text-3xl">psychology</span>
       </div>
-      <h3 class="text-xl font-bold mb-3">Mirada individualitzada</h3>
+      <h3 class="text-xl font-bold mb-3">{cards[1].title}</h3>
       <p class="text-slate-600 text-md leading-relaxed">
-        Acompanyem a nens/as, adolescents i a les seves famílies des d’una mirada individualitzada,
-        adaptant-nos a les seves necessitats i ritmes.
+        {cards[1].description}
       </p>
     </div>
     <div class="glass-card p-8 rounded-3xl group hover:border-primary/50 transition-colors">
@@ -30,10 +36,9 @@
       >
         <span class="material-symbols-outlined text-3xl">science</span>
       </div>
-      <h3 class="text-xl font-bold mb-3">Evidència científica</h3>
+      <h3 class="text-xl font-bold mb-3">{cards[2].title}</h3>
       <p class="text-slate-600 text-md leading-relaxed">
-        Basem el nostre enfocament en l'evidència científica, integrant metodologies actualitzades i
-        contrastades.
+        {cards[2].description}
       </p>
     </div>
   </div>

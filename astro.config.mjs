@@ -1,9 +1,7 @@
-// @ts-check
-import path from 'node:path'
-
 import { defineConfig } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
 import vercel from '@astrojs/vercel'
+import path from 'node:path'
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,6 +12,13 @@ export default defineConfig({
       alias: {
         '@': path.resolve('./src'),
       },
+    },
+  },
+  i18n: {
+    defaultLocale: 'ca',
+    locales: ['es', 'ca', 'en'],
+    routing: {
+      prefixDefaultLocale: false,
     },
   },
   adapter: vercel(),

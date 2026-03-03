@@ -1,18 +1,28 @@
 ---
 import '@/global.css'
-import Header from '../components/Header.astro'
+import Header from '@/components/Header.astro'
+import { getI18N } from '@/i18n'
+
+interface Props {
+  title: string
+  description: string
+}
+
+const { title, description } = Astro.props
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={currentLocale ?? 'ca'}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/BlauteaLogo.webp" />
-    <title>Blautea</title>
-    <meta name="description" content="Blautea" />
-    <meta name="keywords" content="Blautea" />
-    <meta name="author" content="Beatriz Daudén" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={i18n.meta.keywords} />
+    <meta name="author" content={i18n.meta.author} />
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
     <meta name="bingbot" content="index, follow" />

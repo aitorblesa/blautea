@@ -1,3 +1,11 @@
+---
+import { getI18N } from '@/i18n'
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+const services = i18n.services
+---
+
 <div class="py-24 bg-slate-50 flex flex-col gap-20 px-6">
   <div class="grid md:grid-cols-2 lg:grid-cols-6 md:gap-16 items-center max-w-7xl mx-auto">
     <div class="space-y-8 lg:col-span-3">
@@ -5,26 +13,20 @@
         class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-secondary/10 border border-secondary/20"
       >
         <span class="w-2 h-2 rounded-full bg-secondary"></span>
-        <span class="text-secondary text-sm font-semibold tracking-wide uppercase"
-          >Excel·lència Clínica</span
-        >
+        <span class="text-secondary text-sm font-semibold tracking-wide uppercase">{services.badge}</span>
       </div>
       <h1 class="text-5xl lg:text-7xl font-black leading-[1.1] tracking-[-0.04em] text-slate-900">
-        Serveis
+        {services.title}
       </h1>
       <div>
         <p class="text-xl lg:max-w-full text-slate-500 leading-relaxed text-balance">
-          Estem especialitzades en el
-          <em>Trastorn de l'Espectre de l'Autisme</em>, tot i que ens adaptem a cada infant per
-          acompanyar dificultats emocionals, desenvolupar habilitats socials i fer front a altres
-          reptes.
+          {services.intro1Prefix}
+          <em>{services.intro1Emphasis}</em>
+          {services.intro1Suffix}
         </p>
 
         <p class="mt-2 text-balance text-xl text-slate-500 max-w-xl lg:max-w-full leading-relaxed">
-          Realitzem valoracions diagnòstiques, assessorament familiar i intervencions específiques,
-          oferint una atenció adaptada i personalitzada, tant en <span
-            class="text-primary font-bold">Català, Castellà i Anglès</span
-          >.
+          {services.intro2}<span class="text-primary font-bold">{services.languages}</span>.
         </p>
       </div>
     </div>
@@ -32,7 +34,7 @@
       class="relative rounded-3xl overflow-hidden aspect-square shadow-2xl border border-white/10 flex items-center justify-center p-6 h-3/4 w-full lg:h-4/5 lg:col-span-3"
     >
       <img
-        alt="Brain Illustration Concept"
+        alt={services.imageAlt}
         class="w-full h-full object-cover filter drop-shadow-[0_0_30px_rgba(19,164,236,0.3)] rounded-2xl"
         src="/serveis.webp"
       />
@@ -42,41 +44,27 @@
   <div class="grid lg:grid-cols-6 gap-12 max-w-7xl lg:mx-auto lg:items-center">
     <div class="col-span-3 flex flex-col">
       <h2 class="text-4xl md:text-5xl font-black tracking-tight mb-6 text-slate-900">
-        Avaluacions psicològiques
+        {services.assessmentTitle}
       </h2>
       <p class="text-slate-500 text-lg max-w-md leading-relaxed">
-        Processos diagnòstics individualitzats i adaptats a cada infant, permetent-nos orientar
-        adequadament les sessions psicològiques i dissenyar intervencions eficaces per nens i
-        adolescents.
+        {services.assessmentDescription}
       </p>
       <div class="mt-8 flex items-center gap-4 text-primary">
         <span class="h-px w-12 bg-primary/30"></span>
-        <span class="text-sm font-bold uppercase tracking-widest">Protocols Clínics</span>
+        <span class="text-sm font-bold uppercase tracking-widest">{services.assessmentLabel}</span>
       </div>
     </div>
 
     <div class="glass-card p-8 rounded-3xl col-span-3 border-primary/40 h-fit">
-      <ul class="space-y-2
-      text-sm
-      mt-6">
-        <li class="flex gap-3">
-          <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
-          <span class="text-slate-600">Trastorn de l'Espectre Autista (TEA)</span>
-        </li>
-        <li class="flex gap-3">
-          <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
-          <span class="text-slate-600"
-            >Trastorn per Dèficit d'Atenció amb/sense Hiperactivitat (TDAH)</span
-          >
-        </li>
-        <li class="flex gap-3">
-          <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
-          <span class="text-slate-600">Neurodesenvolupament</span>
-        </li>
-        <li class="flex gap-3">
-          <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
-          <span class="text-slate-600">Capacitat cognitiva</span>
-        </li>
+      <ul class="space-y-2 text-sm mt-6">
+        {
+          services.assessmentList.map((item) => (
+            <li class="flex gap-3">
+              <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
+              <span class="text-slate-600">{item}</span>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>
@@ -84,48 +72,27 @@
   <div class="grid lg:grid-cols-6 gap-12 max-w-7xl mx-auto items-center">
     <div class="col-span-3">
       <h3 class="text-4xl font-black tracking-tight mb-6 text-slate-900">
-        Modalitats d'intervenció
+        {services.interventionTitle}
       </h3>
       <p class="text-slate-500 text-lg max-w-md leading-relaxed">
-        Sessions d’intervenció adaptades a les necessitats de cada infant i familia, treballant de
-        forma flexible i col·laborativa, assegurant una atenció integral que afavoreixi el benestar
-        emocional al llarg de cada etapa evolutiva.
+        {services.interventionDescription}
       </p>
       <div class="mt-8 flex items-center gap-4 text-primary">
         <span class="h-px w-12 bg-primary/30"></span>
-        <span class="text-sm font-bold uppercase tracking-widest"
-          >Pràctiques basades en l’evidència</span
-        >
+        <span class="text-sm font-bold uppercase tracking-widest">{services.interventionLabel}</span>
       </div>
     </div>
 
     <div class="glass-card p-8 rounded-3xl col-span-3 border-primary/40">
       <ul class="space-y-2 text-sm mt-6">
-        <li class="flex gap-3">
-          <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
-          <span class="text-slate-600">Sessions presencials individualitzades</span>
-        </li>
-        <li class="flex gap-3">
-          <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
-          <span class="text-slate-600">Sessions online individualitzades</span>
-        </li>
-        <li class="flex gap-3">
-          <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
-          <span class="text-slate-600">Sessions presencials grupals</span>
-        </li>
-        <li class="flex gap-3">
-          <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
-          <span class="text-slate-600"
-            >Sessions d’assessorament a pares de manera individualitzada o en format grupal</span
-          >
-        </li>
-        <li class="flex gap-3">
-          <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
-          <span class="text-slate-600"
-            >Coordinació amb els centres escolars per oferir orientacions i estratègies útils a
-            l’entorn educatiu i amb la comunitària (CDIAPs i CSMIJs)</span
-          >
-        </li>
+        {
+          services.interventionList.map((item) => (
+            <li class="flex gap-3">
+              <span class="material-symbols-outlined text-secondary text-sm mt-0.5">check_circle</span>
+              <span class="text-slate-600">{item}</span>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>

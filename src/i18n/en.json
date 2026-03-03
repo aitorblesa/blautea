@@ -1,0 +1,197 @@
+{
+  "meta": {
+    "title": "Blautea - Family Psychology Practice",
+    "description": "Family psychology practice",
+    "keywords": "Blautea",
+    "author": "Beatriz Daudén"
+  },
+  "header": {
+    "home": "Home",
+    "services": "Services",
+    "methodology": "Methodology",
+    "team": "Team",
+    "contact": "Contact",
+    "faqs": "FAQ",
+    "servicesRef": "services",
+    "methodologyRef": "methodology",
+    "teamRef": "team",
+    "contactRef": "contact",
+    "faqsRef": "frequently-asked-questions",
+    "logoAlt": "Blautea logo",
+    "languageFlagAlt": "United Kingdom flag"
+  },
+  "hero": {
+    "badge": "Child and adolescent psychology",
+    "titlePrefix": "Psychology consultations",
+    "titleHighlight": "for children and teenagers",
+    "titleSuffix": "in Barcelona",
+    "description": "At BLAUTEA, we provide close, respectful care committed to each person's wellbeing and environment. We support children, adolescents, and their families through an individualized approach adapted to their needs and pace.",
+    "imageAlt": "Brain illustration"
+  },
+  "heroCards": {
+    "items": [
+      {
+        "title": "Close support",
+        "description": "We provide close, respectful care committed to each person's wellbeing and environment."
+      },
+      {
+        "title": "Individualized approach",
+        "description": "We support children, adolescents, and their families through an individualized approach adapted to their needs and pace."
+      },
+      {
+        "title": "Scientific evidence",
+        "description": "Our approach is grounded in scientific evidence, integrating up-to-date and validated methodologies."
+      }
+    ]
+  },
+  "services": {
+    "badge": "Clinical excellence",
+    "title": "Services",
+    "intro1Prefix": "We are specialized in ",
+    "intro1Emphasis": "Autism Spectrum Disorder",
+    "intro1Suffix": ", while adapting to each child to support emotional difficulties, develop social skills, and address other challenges.",
+    "intro2": "We carry out diagnostic assessments, family guidance, and specific interventions, providing tailored and personalized care in ",
+    "languages": "Catalan, Spanish, and English",
+    "imageAlt": "Psychology services image",
+    "assessmentTitle": "Psychological assessments",
+    "assessmentDescription": "Individualized diagnostic processes adapted to each child, allowing us to properly guide psychological sessions and design effective interventions for children and adolescents.",
+    "assessmentLabel": "Clinical protocols",
+    "assessmentList": [
+      "Autism Spectrum Disorder (ASD)",
+      "Attention Deficit Hyperactivity Disorder (ADHD)",
+      "Neurodevelopment",
+      "Cognitive ability"
+    ],
+    "interventionTitle": "Intervention modalities",
+    "interventionDescription": "Intervention sessions adapted to each child and family's needs, working in a flexible and collaborative way to ensure comprehensive care that supports emotional wellbeing throughout each developmental stage.",
+    "interventionLabel": "Evidence-based practices",
+    "interventionList": [
+      "Individual in-person sessions",
+      "Individual online sessions",
+      "Group in-person sessions",
+      "Individual or group parent guidance sessions",
+      "Coordination with schools to provide practical strategies for educational and community settings (CDIAP and CSMIJ)"
+    ]
+  },
+  "methodology": {
+    "badge": "SCIENTIFIC EVIDENCE",
+    "titlePrefix": "Cognitive-behavioral",
+    "titleHighlight": "methodology",
+    "summary": "Our commitment is based on evidence-based interventions and agreed therapeutic plans that consider both the child's and the family's needs.",
+    "earlyTitle": "Early ASD intervention (12 months - 5 years)",
+    "earlyImageAlt": "Early intervention illustration",
+    "earlyStartTitle": "Early Start Denver Model",
+    "earlyStartDescription": "An intervention model that starts from the child's interests and motivation, sets goals, and works on skills across different developmental areas.",
+    "earlyStartLinkLabel": "Read our ESDM policy",
+    "parentTitle": "P-ESDM / Parent Coaching",
+    "parentDescription": "Active family coaching in evidence-based strategies to stimulate play, communication, and social interaction in everyday routines.",
+    "parentBadge": "Close family support.",
+    "guidelinesTitle": "Specific guidance on",
+    "guidelinesItems": ["Feeding", "Behavior management", "Sleep patterns", "Social skills"],
+    "childhoodTitle": "Childhood and adolescence",
+    "focusTitle": "Therapeutic focus areas",
+    "focusItems": [
+      "Cognitive flexibility",
+      "Emotional regulation",
+      "Social skills",
+      "Personal autonomy",
+      "Executive functions",
+      "Self-concept"
+    ],
+    "pecsTitle": "PECS",
+    "pecsDescription": "Picture Exchange Communication System to foster functional and expressive communication.",
+    "scertsTitle": "SCERTS",
+    "scertsDescription": "Intervention focused on Social Communication and Emotional Regulation with Transactional Support.",
+    "childhoodImageAlt": "Visual representation of growth and emotional wellbeing"
+  },
+  "team": {
+    "badge": "Our team",
+    "title": "Connect with our psychologists",
+    "description": "We support every process with closeness, professional rigor, and sensitivity.",
+    "trajectoryLabel": "Background",
+    "members": [
+      {
+        "name": "Maria Duffo",
+        "role": "General health psychologist",
+        "quote": "Specialized in autism diagnosis and intervention from childhood to adolescence. Experienced in emotional support, anxiety management, behavior difficulties, and attention and hyperactivity challenges.",
+        "experience": [
+          "Hospital Sant Joan de Déu Barcelona (early stimulation, acute hospitalization, and high-specialization autism unit).",
+          "Psychodiagnostic assessment processes from early childhood to age 18.",
+          "Therapeutic intervention following the ESDM model and cognitive-behavioral intervention in childhood and adolescence."
+        ],
+        "certificateLinkLabel": "Certified ESDM therapist",
+        "certificateSuffix": "and trained in P-ESDM.",
+        "imageAlt": "Maria Duffo"
+      },
+      {
+        "name": "Beatriz Daudén",
+        "role": "General health psychologist",
+        "quote": "Specialized in early autism care, including both diagnosis and intervention following the ESDM model, as well as active support for families. Trained in PECS implementation.",
+        "experience": [
+          "TEA CARE Mas Casadevall Program (Hospital Sant Joan de Déu Barcelona).",
+          "Early evaluation and diagnosis of children with ASD warning signs or neurodevelopmental difficulties.",
+          "Therapeutic intervention following ESDM and P-ESDM."
+        ],
+        "certificateLinkLabel": "Certified ESDM therapist",
+        "certificateSuffix": "and trained in P-ESDM.",
+        "imageAlt": "Beatriz Daudén"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "Write or call us describing your reason for consultation, and you will receive a response as soon as possible.",
+    "cardTitle": "Contact information",
+    "locationLabel": "Location",
+    "locationText": "C/ Granada del Penedès, 19-21, Stair B, Mezzanine 1A, 08006 Barcelona",
+    "phonesLabel": "Phone numbers",
+    "phoneMaria": "+34 676 789 166 (Maria)",
+    "phoneBea": "+34 678 482 418 (Bea)",
+    "emailLabel": "Email",
+    "email": "info@blautea.com",
+    "scheduleLabel": "Opening hours",
+    "scheduleText": "Monday to Friday: 9:00 - 20:00",
+    "officeImageAlt": "Blautea waiting room"
+  },
+  "faq": {
+    "titlePrefix": "Frequently asked",
+    "titleHighlight": "questions",
+    "intro": "Find clear answers about how we work. We are available for any other questions you may have.",
+    "items": [
+      {
+        "question": "What ages do you work with?",
+        "answer": "We work with children and adolescents from 0 to 18 years old. Depending on developmental stage, individual characteristics, and specific needs, we provide personalized care adapted to each stage."
+      },
+      {
+        "question": "How long does an assessment process take?",
+        "answer": "The duration of the assessment process depends on both family availability and the child/adolescent psychologist conducting the evaluation. It usually involves five to six visits over about one month."
+      },
+      {
+        "question": "How often are intervention visits?",
+        "answer": "The frequency of intervention sessions is adjusted to family availability and the child's specific needs, and may be weekly, biweekly, or monthly."
+      },
+      {
+        "question": "How much do sessions cost?",
+        "answer": "Session cost varies depending on duration, service type, and goals for each visit. During the first contact call, we provide a clear and detailed explanation of applicable fees."
+      },
+      {
+        "question": "Do parents attend the sessions?",
+        "answer": "Family involvement is highly valued throughout assessment and intervention. In early intervention, parents actively participate in sessions. For adolescents, we adapt to the needs of both the young person and the family context."
+      },
+      {
+        "question": "Do you offer sessions in natural settings (home, school)?",
+        "answer": "At the moment, some sessions in natural settings such as home or school are offered occasionally. As the team grows, we will expand services and include more frequent interventions in natural environments."
+      }
+    ]
+  },
+  "footer": {
+    "description": "Psychology consultations specialized in autism and child and adolescent neurodevelopment. Commitment, rigor, and sensitivity.",
+    "exploreTitle": "Explore",
+    "copyright": "© 2026 BLAUTEA Child and adolescent psychology consultations."
+  },
+  "flags": {
+    "Catalan": "Catala",
+    "Spanish": "Spanish",
+    "English": "English"
+  }
+}

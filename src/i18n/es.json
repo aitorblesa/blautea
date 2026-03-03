@@ -1,0 +1,202 @@
+{
+  "meta": {
+    "title": "Blautea - Consulta psicológica familiar",
+    "description": "Consulta psicológica familiar",
+    "keywords": "Blautea",
+    "author": "Beatriz Daudén"
+  },
+  "header": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "methodology": "Metodología",
+    "team": "Equipo",
+    "contact": "Contacto",
+    "faqs": "FAQ",
+    "servicesRef": "servicios",
+    "methodologyRef": "metodologia",
+    "teamRef": "equipo",
+    "contactRef": "contacto",
+    "faqsRef": "preguntas-frecuentes",
+    "logoAlt": "Logotipo de Blautea",
+    "languageFlagAlt": "Bandera de España"
+  },
+  "hero": {
+    "badge": "Psicología infantil y juvenil",
+    "titlePrefix": "Consultas de psicología",
+    "titleHighlight": "para niños y adolescentes",
+    "titleSuffix": "en Barcelona",
+    "description": "En BLAUTEA ofrecemos una atención cercana, respetuosa y comprometida con el bienestar de cada persona y su entorno. Acompañamos a niños, adolescentes y sus familias desde una mirada individualizada, adaptándonos a sus necesidades y ritmos.",
+    "imageAlt": "Ilustración de cerebro"
+  },
+  "heroCards": {
+    "items": [
+      {
+        "title": "Atención cercana",
+        "description": "Ofrecemos una atención cercana, respetuosa y comprometida con el bienestar de cada persona y su entorno."
+      },
+      {
+        "title": "Mirada individualizada",
+        "description": "Acompañamos a niños, adolescentes y sus familias desde una mirada individualizada, adaptándonos a sus necesidades y ritmos."
+      },
+      {
+        "title": "Evidencia científica",
+        "description": "Basamos nuestro enfoque en la evidencia científica, integrando metodologías actualizadas y contrastadas."
+      }
+    ]
+  },
+  "services": {
+    "badge": "Excelencia clínica",
+    "title": "Servicios",
+    "intro1Prefix": "Estamos especializadas en el ",
+    "intro1Emphasis": "Trastorno del Espectro Autista",
+    "intro1Suffix": ", aunque nos adaptamos a cada niño para acompañar dificultades emocionales, desarrollar habilidades sociales y afrontar otros retos.",
+    "intro2": "Realizamos valoraciones diagnósticas, asesoramiento familiar e intervenciones específicas, ofreciendo una atención adaptada y personalizada en ",
+    "languages": "Catalán, Castellano e Inglés",
+    "imageAlt": "Imagen de servicios de psicología",
+    "assessmentTitle": "Evaluaciones psicológicas",
+    "assessmentDescription": "Procesos diagnósticos individualizados y adaptados a cada niño, que nos permiten orientar adecuadamente las sesiones psicológicas y diseñar intervenciones eficaces para niños y adolescentes.",
+    "assessmentLabel": "Protocolos clínicos",
+    "assessmentList": [
+      "Trastorno del Espectro Autista (TEA)",
+      "Trastorno por Déficit de Atención con/sin Hiperactividad (TDAH)",
+      "Neurodesarrollo",
+      "Capacidad cognitiva"
+    ],
+    "interventionTitle": "Modalidades de intervención",
+    "interventionDescription": "Sesiones de intervención adaptadas a las necesidades de cada niño y familia, trabajando de forma flexible y colaborativa para asegurar una atención integral que favorezca el bienestar emocional en cada etapa evolutiva.",
+    "interventionLabel": "Prácticas basadas en la evidencia",
+    "interventionList": [
+      "Sesiones presenciales individualizadas",
+      "Sesiones online individualizadas",
+      "Sesiones presenciales grupales",
+      "Sesiones de asesoramiento a padres de manera individualizada o en formato grupal",
+      "Coordinación con centros escolares para ofrecer orientaciones y estrategias útiles en el entorno educativo y comunitario (CDIAP y CSMIJ)"
+    ]
+  },
+  "methodology": {
+    "badge": "EVIDENCIA CIENTÍFICA",
+    "titlePrefix": "Metodología",
+    "titleHighlight": "cognitivo-conductual",
+    "summary": "Nuestro compromiso se fundamenta en intervenciones basadas en la evidencia y planes terapéuticos consensuados que tienen en cuenta las necesidades tanto del niño como de la familia.",
+    "earlyTitle": "Atención temprana del TEA (12 meses - 5 años)",
+    "earlyImageAlt": "Ilustración de atención temprana",
+    "earlyStartTitle": "Early Start Denver Model",
+    "earlyStartDescription": "Modelo de intervención en el que, partiendo de los intereses y la motivación del niño, se establece un plan de objetivos y se trabajan habilidades de las diferentes áreas del desarrollo.",
+    "earlyStartLinkLabel": "Consulta nuestra política ESDM",
+    "parentTitle": "P-ESDM / Parent Coaching",
+    "parentDescription": "Acompañamiento activo a familias en el aprendizaje de estrategias con evidencia para estimular el juego, la comunicación y la interacción social, aplicables en el día a día.",
+    "parentBadge": "Acompañamiento familiar cercano.",
+    "guidelinesTitle": "Pautas específicas en",
+    "guidelinesItems": [
+      "Alimentación",
+      "Manejo de conducta",
+      "Patrones de sueño",
+      "Habilidades sociales"
+    ],
+    "childhoodTitle": "Infancia y Adolescencia",
+    "focusTitle": "Áreas de enfoque terapéutico",
+    "focusItems": [
+      "Flexibilidad cognitiva",
+      "Regulación emocional",
+      "Habilidades sociales",
+      "Autonomía personal",
+      "Funciones ejecutivas",
+      "Autoconcepto"
+    ],
+    "pecsTitle": "PECS",
+    "pecsDescription": "Sistemas de comunicación por intercambio de imágenes para fomentar la comunicación funcional y expresiva.",
+    "scertsTitle": "SCERTS",
+    "scertsDescription": "Intervención centrada en la Comunicación Social y la Regulación Emocional con Apoyo Transaccional.",
+    "childhoodImageAlt": "Representación visual de crecimiento y bienestar emocional"
+  },
+  "team": {
+    "badge": "Nuestro equipo",
+    "title": "Conecta con nuestras psicólogas",
+    "description": "Acompañamos cada proceso con cercanía, rigor profesional y sensibilidad.",
+    "trajectoryLabel": "Trayectoria",
+    "members": [
+      {
+        "name": "Maria Duffo",
+        "role": "Psicóloga general sanitaria",
+        "quote": "Especializada en el diagnóstico y la intervención del autismo, desde la infancia hasta la adolescencia. Con experiencia en acompañamiento emocional, gestión de la ansiedad, problemas de conducta y dificultades atencionales e hiperactividad.",
+        "experience": [
+          "Hospital Sant Joan de Déu de Barcelona (estimulación precoz, hospitalización de agudos y unidad de alta especialización de autismo).",
+          "Procesos de valoración psicodiagnóstica desde primera infancia hasta los 18 años.",
+          "Intervención terapéutica siguiendo el Modelo ESDM e intervención cognitivo-conductual en infancia y adolescencia."
+        ],
+        "certificateLinkLabel": "Terapeuta certificada en el Modelo ESDM",
+        "certificateSuffix": "y formada en P-ESDM.",
+        "imageAlt": "Maria Duffo"
+      },
+      {
+        "name": "Beatriz Daudén",
+        "role": "Psicóloga general sanitaria",
+        "quote": "Especializada en la atención temprana del autismo, tanto en el diagnóstico como en la intervención siguiendo el Modelo ESDM y en el acompañamiento activo a las familias. Con formación en la implementación del sistema PECS.",
+        "experience": [
+          "Programa TEA CARE Mas Casadevall (Hospital Sant Joan de Déu de Barcelona).",
+          "Evaluación y diagnóstico temprano de niños con señales de alerta de TEA o dificultades del neurodesarrollo.",
+          "Intervención terapéutica siguiendo el Modelo ESDM y P-ESDM."
+        ],
+        "certificateLinkLabel": "Terapeuta certificada en el Modelo ESDM",
+        "certificateSuffix": "y formada en P-ESDM.",
+        "imageAlt": "Beatriz Daudén"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "Escríbenos o llámanos explicando tu motivo de consulta y recibirás una respuesta lo antes posible.",
+    "cardTitle": "Información de contacto",
+    "locationLabel": "Ubicación",
+    "locationText": "C/ Granada del Penedès, 19-21, Esc. B, Entres. 1a, 08006 Barcelona",
+    "phonesLabel": "Teléfonos",
+    "phoneMaria": "+34 676 789 166 (Maria)",
+    "phoneBea": "+34 678 482 418 (Bea)",
+    "emailLabel": "Email",
+    "email": "info@blautea.com",
+    "scheduleLabel": "Horario",
+    "scheduleText": "Lunes a Viernes: 9:00 - 20:00",
+    "officeImageAlt": "Sala de espera de Blautea"
+  },
+  "faq": {
+    "titlePrefix": "Preguntas",
+    "titleHighlight": "frecuentes",
+    "intro": "Encuentra respuestas claras sobre cómo trabajamos. Estamos a tu disposición para cualquier otra duda que puedas tener.",
+    "items": [
+      {
+        "question": "¿Qué edades atendéis?",
+        "answer": "Las edades que atendemos en nuestras consultas de psicología abarcan niños y adolescentes desde los 0 hasta los 18 años. Según la etapa vital y de desarrollo, las características individuales y las necesidades específicas, ofrecemos una atención personalizada y ajustada al momento evolutivo."
+      },
+      {
+        "question": "¿Cuánto dura un proceso de valoración?",
+        "answer": "La duración del proceso de valoración dependerá de la disponibilidad tanto de la familia como de la psicóloga infantil o adolescente que realice la evaluación. Habitualmente se realizan entre cinco y seis visitas, que pueden distribuirse a lo largo de un mes."
+      },
+      {
+        "question": "¿Con qué frecuencia son las visitas de intervención?",
+        "answer": "La frecuencia de las visitas de intervención en psicología se ajusta a la disponibilidad de la familia y a las necesidades específicas del menor, y puede ser semanal, quincenal o mensual."
+      },
+      {
+        "question": "¿Cuánto cuestan las visitas?",
+        "answer": "El coste de las visitas varía según su duración, la tipología del servicio y los objetivos planteados en cada visita. Durante la primera llamada de contacto, ofrecemos a la familia una explicación clara y detallada de las tarifas aplicables."
+      },
+      {
+        "question": "¿Los padres entran en las visitas?",
+        "answer": "En nuestras visitas valoramos profundamente la implicación de la familia en todo el proceso de valoración e intervención. En atención temprana, los progenitores participan activamente dentro de la sesión. En el acompañamiento a adolescentes, valoramos la necesidad del menor y del entorno familiar con flexibilidad."
+      },
+      {
+        "question": "¿Realizáis visitas en contexto natural (casa, centro educativo)?",
+        "answer": "Actualmente se realizan de manera puntual algunas visitas en contexto natural, como el hogar o el centro educativo. A medida que el equipo vaya creciendo, podremos ampliar los servicios e incorporar intervenciones más frecuentes en entornos naturales."
+      }
+    ]
+  },
+  "footer": {
+    "description": "Consultas de psicología especializadas en autismo y neurodesarrollo infantil y juvenil. Compromiso, rigor y sensibilidad.",
+    "exploreTitle": "Explora",
+    "copyright": "© 2026 BLAUTEA Consultas de Psicología infantil y juvenil."
+  },
+  "flags": {
+    "Catalan": "Catalán",
+    "Spanish": "Español",
+    "English": "Inglés"
+  }
+}

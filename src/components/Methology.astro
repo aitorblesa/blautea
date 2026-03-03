@@ -1,3 +1,11 @@
+---
+import { getI18N } from '@/i18n'
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+const methodology = i18n.methodology
+---
+
 <div class="py-24">
   <header class="relative pb-16 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 md:text-center">
@@ -5,26 +13,25 @@
         class="inline-flex items-center gap-2 py-1.5 px-4 bg-secondary/10 text-secondary rounded-full text-sm font-bold mb-8 tracking-wide"
       >
         <span class="w-2 h-2 rounded-full bg-secondary"></span>
-        EVIDÈNCIA CIENTÍFICA
+        {methodology.badge}
       </div>
       <h1 class="text-4xl lg:text-7xl font-extrabold text-accent leading-[1.1] mb-8">
-        Metodología <span class="text-primary">cognitiva conductual </span>
+        {methodology.titlePrefix} <span class="text-primary">{methodology.titleHighlight}</span>
       </h1>
       <p class="text-xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-        El nostre compromís es fonamenta en intervencions basades en l'evidència i plans terapèutics
-        consensuats que tenen en compte les necessitats tant de l’infant com de la família.
+        {methodology.summary}
       </p>
       <div class="mx-auto w-24 h-1.5 bg-primary rounded-full"></div>
     </div>
   </header>
   <article class="max-w-7xl mx-auto px-6 space-y-24">
     <h2 class="text-3xl lg:text-4xl font-bold text-accent text-balance mb-6">
-      Atenció Primerenca del TEA (12 mesos - 5 anys)
+      {methodology.earlyTitle}
     </h2>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
       <div class="bg-white/50 p-6 rounded-2xl border border-slate-200/50">
         <img
-          alt="Early Intervention Illustration"
+          alt={methodology.earlyImageAlt}
           class="w-full max-h-64 md:max-h-80 lg:h-full object-cover rounded-xl shadow-lg"
           src="/atencion_temprana.webp"
         />
@@ -39,11 +46,10 @@
             >
               <span class="material-symbols-outlined text-4xl">extension</span>
             </div>
-            <h3 class="text-xl font-bold mb-4 text-accent">Early Start Denver Model</h3>
+            <h3 class="text-xl font-bold mb-4 text-accent">{methodology.earlyStartTitle}</h3>
           </div>
           <p class="text-slate-600 mb-6 leading-relaxed">
-            Model d’intervenció on partint dels interessos i la motivació de l’infant s’estableix un
-            pla d’objectius i es treballen habilitats de les diferents àrees del desenvolupament.
+            {methodology.earlyStartDescription}
           </p>
           <a
             class="inline-flex items-center gap-2 text-primary font-semibold hover:underline text-sm"
@@ -51,7 +57,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            Consulta la nostra política ESDM
+            {methodology.earlyStartLinkLabel}
             <span class="material-symbols-outlined text-sm">open_in_new</span>
           </a>
         </div>
@@ -62,34 +68,34 @@
             >
               <span class="material-symbols-outlined text-4xl">favorite</span>
             </div>
-            <h3 class="text-xl font-bold mb-4 text-accent">P-ESDM / Parent Coaching</h3>
+            <h3 class="text-xl font-bold mb-4 text-accent">{methodology.parentTitle}</h3>
           </div>
           <p class="text-slate-600 mb-6 leading-relaxed">
-            Acompanyament actiu a famílies en l’aprenentatge d’estratègies evidenciades per
-            estimular el joc, la comunicació i la interacció social, aplicables en el dia a dia.
+            {methodology.parentDescription}
           </p>
           <div class="flex items-center gap-2 text-primary">
             <span class="material-symbols-outlined text-sm">verified_user</span>
-            Acompanyament familiar proper.
+            {methodology.parentBadge}
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:col-span-2">
           <div class="glass-card p-6 rounded-2xl col-span-full">
             <h3 class="text-xl font-bold mb-6 text-accent flex items-center gap-2">
               <span class="material-symbols-outlined text-primary">target</span>
-              Pautes espeficiques en
+              {methodology.guidelinesTitle}
             </h3>
             <div class="flex flex-col md:flex-row font-semibold text-sm justify-between gap-6">
-              <span class="bg-amber-100/50 text-amber-700 px-4 py-1 rounded-full">Alimentació</span>
-
+              <span class="bg-amber-100/50 text-amber-700 px-4 py-1 rounded-full"
+                >{methodology.guidelinesItems[0]}</span
+              >
               <span class="bg-purple-100/50 text-purple-700 px-4 py-1 rounded-full"
-                >Maneig de conducta</span
+                >{methodology.guidelinesItems[1]}</span
               >
               <span class="bg-indigo-100/50 text-indigo-700 px-4 py-1 rounded-full"
-                >Patrons de la son</span
+                >{methodology.guidelinesItems[2]}</span
               >
               <span class="bg-teal-100/50 text-teal-700 px-4 py-1 rounded-full"
-                >Habilitats socials</span
+                >{methodology.guidelinesItems[3]}</span
               >
             </div>
           </div>
@@ -97,60 +103,60 @@
       </div>
     </div>
     <div class="flex flex-col">
-      <h2 class="text-4xl font-bold text-accent mb-6">Infància i Adolescència</h2>
+      <h2 class="text-4xl font-bold text-accent mb-6">{methodology.childhoodTitle}</h2>
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:col-span-2">
           <div class="glass-card p-6 rounded-2xl col-span-full">
             <h3 class="text-xl font-bold mb-6 text-accent flex gap-2">
               <span class="material-symbols-outlined text-primary">target</span>
-              Àrees de focus terapèutic
+              {methodology.focusTitle}
             </h3>
             <div
               class="flex flex-col md:flex-row md:flex-wrap md:justify-between gap-y-4 gap-x-14 font-semibold text-sm"
             >
               <span class="bg-blue-100/50 text-blue-700 px-4 py-1 rounded-full"
-                >Flexibilitat cognitiva</span
+                >{methodology.focusItems[0]}</span
               >
               <span class="bg-teal-100/50 text-teal-700 px-4 py-1 rounded-full"
-                >Regulació emocional</span
+                >{methodology.focusItems[1]}</span
               >
               <span class="bg-indigo-100/50 text-indigo-700 px-4 py-1 rounded-full"
-                >Habilitats socials</span
+                >{methodology.focusItems[2]}</span
               >
               <span class="bg-purple-100/50 text-purple-700 px-4 py-1 rounded-full"
-                >Autonomia personal</span
+                >{methodology.focusItems[3]}</span
               >
               <span class="bg-amber-100/50 text-amber-700 px-4 py-1 rounded-full"
-                >Funcions executives</span
+                >{methodology.focusItems[4]}</span
               >
-              <span class="bg-rose-100/50 text-rose-700 px-4 py-1 rounded-full">Autoconcepte</span>
+              <span class="bg-rose-100/50 text-rose-700 px-4 py-1 rounded-full"
+                >{methodology.focusItems[5]}</span
+              >
             </div>
           </div>
           <div class="glass-card p-6 rounded-2xl border-l-4 border-l-secondary">
             <div class="flex items-center gap-3 mb-4">
               <span class="material-symbols-outlined text-secondary">forum</span>
-              <h4 class="font-bold text-accent">PECS</h4>
+              <h4 class="font-bold text-accent">{methodology.pecsTitle}</h4>
             </div>
             <p class="text-md text-slate-500 leading-relaxed">
-              Sistemes de comunicació per intercanvi d'imatges per fomentar la comunicació funcional
-              i expressiva.
+              {methodology.pecsDescription}
             </p>
           </div>
           <div class="glass-card p-6 rounded-2xl border-l-4 border-l-secondary">
             <div class="flex items-center gap-3 mb-4">
               <span class="material-symbols-outlined text-secondary">hub</span>
-              <h4 class="font-bold text-accent">SCERTS</h4>
+              <h4 class="font-bold text-accent">{methodology.scertsTitle}</h4>
             </div>
             <p class="text-md text-slate-500 leading-relaxed">
-              Intervenció centrada en la Comunicació Social i la Regulació Emocional amb Suport
-              Transaccional.
+              {methodology.scertsDescription}
             </p>
           </div>
         </div>
         <div class="bg-white/50 p-6 rounded-2xl border border-slate-200/50 col-span-1">
           <img
             src="/infancia_adolescencia.webp"
-            alt="Visual representació de creixement i benestar emocional"
+            alt={methodology.childhoodImageAlt}
             class="w-full max-h-64 md:max-h-80 lg:h-full object-cover rounded-xl shadow-lg transition-transform duration-700 group-hover:scale-105"
           />
         </div>

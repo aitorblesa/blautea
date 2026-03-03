@@ -1,215 +1,53 @@
+---
+import { getI18N } from '@/i18n'
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+const faq = i18n.faq
+---
+
 <div class="py-12 lg:py-24 px-6">
   <div class="flex flex-col items-center text-center mb-16 max-w-3xl mx-auto">
     <h1
       class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight"
     >
-      Preguntes <span class="text-primary">freqüents</span>
+      {faq.titlePrefix} <span class="text-primary">{faq.titleHighlight}</span>
     </h1>
     <p class="text-xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-      Troba respostes clares sobre com treballem, estem a la teva disposició per qualsevol altre
-      dubte que puguis tenir
+      {faq.intro}
     </p>
   </div>
 
   <div class="max-w-3xl mx-auto space-y-4">
-    <div
-      class="glass-card rounded-xl shadow-sm hover:shadow-md transition-shadow group overflow-hidden"
-    >
-      <input class="accordion-check hidden peer" id="faq-1" type="checkbox" />
-      <label
-        class="flex items-center justify-between w-full p-6 cursor-pointer select-none"
-        for="faq-1"
-      >
-        <div class="flex items-center gap-4">
-          <span class="text-2xl font-light text-slate-300">1</span>
-          <h3 class="text-lg font-bold text-slate-900 group-hover:text-primary transition-colors">
-            Quines edats ateneu?
-          </h3>
-        </div>
-        <div
-          class="w-8 h-8 rounded-full bg-teal-soft/20 flex items-center justify-center shrink-0 transition-colors group-hover:bg-teal-soft/40"
-        >
-          <span
-            class="material-symbols-outlined text-teal-deep icon-rotate transition-transform duration-300"
-            >add</span
+    {
+      faq.items.map((item, index) => (
+        <div class="glass-card rounded-xl shadow-sm hover:shadow-md transition-shadow group overflow-hidden">
+          <input class="accordion-check hidden peer" id={`faq-${index + 1}`} type="checkbox" />
+          <label
+            class="flex items-center justify-between w-full p-6 cursor-pointer select-none"
+            for={`faq-${index + 1}`}
           >
+            <div class="flex items-center gap-4">
+              <span class="text-2xl font-light text-slate-300">{index + 1}</span>
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-primary transition-colors">
+                {item.question}
+              </h3>
+            </div>
+            <div
+              class="w-8 h-8 rounded-full bg-teal-soft/20 flex items-center justify-center shrink-0 transition-colors group-hover:bg-teal-soft/40"
+            >
+              <span
+                class="material-symbols-outlined text-teal-deep icon-rotate transition-transform duration-300"
+                >add</span
+              >
+            </div>
+          </label>
+          <div class="accordion-content px-6 md:pl-20">
+            <p class="text-slate-600 leading-relaxed">{item.answer}</p>
+          </div>
         </div>
-      </label>
-      <div class="accordion-content px-6 md:pl-20">
-        <p class="text-slate-600 leading-relaxed">
-          Les edats que atenem a les nostres consultes de psicologia comprenen infants i adolescents
-          des dels 0 fins als 18 anys. Segons l’etapa vital i de desenvolupament en què es trobi el
-          menor, les característiques individuals i les necessitats específiques, oferim una atenció
-          personalitzada i ajustada al seu moment evolutiu, garantint un acompanyament professional
-          que afavoreixi el seu benestar i desenvolupament.
-        </p>
-      </div>
-    </div>
-    <div
-      class="glass-card rounded-xl shadow-sm hover:shadow-md transition-shadow group overflow-hidden"
-    >
-      <input class="accordion-check hidden peer" id="faq-2" type="checkbox" />
-      <label
-        class="flex items-center justify-between w-full p-6 cursor-pointer select-none"
-        for="faq-2"
-      >
-        <div class="flex items-center gap-4">
-          <span class="text-2xl font-light text-slate-300">2</span>
-          <h3 class="text-lg font-bold text-slate-900 group-hover:text-primary transition-colors">
-            Quant dura un procés de valoració?
-          </h3>
-        </div>
-        <div
-          class="w-8 h-8 rounded-full bg-teal-soft/20 flex items-center justify-center shrink-0 transition-colors group-hover:bg-teal-soft/40"
-        >
-          <span
-            class="material-symbols-outlined text-teal-deep icon-rotate transition-transform duration-300"
-            >add</span
-          >
-        </div>
-      </label>
-      <div class="accordion-content px-6 md:pl-20">
-        <p class="text-slate-600 leading-relaxed">
-          La durada del procés de valoració dependrà de la disponibilitat tant de la família com de
-          la psicòloga infantil o adolescent que realitzi l’avaluació. Habitualment es duen a terme
-          entre cinc i sis visites, que poden distribuir-se al llarg d’un mes. Aquest període permet
-          recollir informació rellevant, conèixer el funcionament quotidià i realitzar una valoració
-          que inclogui les fortaleses i les necessitats del menor.
-        </p>
-      </div>
-    </div>
-    <div
-      class="glass-card rounded-xl shadow-sm hover:shadow-md transition-shadow group overflow-hidden"
-    >
-      <input class="accordion-check hidden peer" id="faq-3" type="checkbox" />
-      <label
-        class="flex items-center justify-between w-full p-6 cursor-pointer select-none"
-        for="faq-3"
-      >
-        <div class="flex items-center gap-4">
-          <span class="text-2xl font-light text-slate-300">3</span>
-          <h3 class="text-lg font-bold text-slate-900 group-hover:text-primary transition-colors">
-            Amb quina freqüència són les visites d’intervenció?
-          </h3>
-        </div>
-        <div
-          class="w-8 h-8 rounded-full bg-teal-soft/20 flex items-center justify-center shrink-0 transition-colors group-hover:bg-teal-soft/40"
-        >
-          <span
-            class="material-symbols-outlined text-teal-deep icon-rotate transition-transform duration-300"
-            >add</span
-          >
-        </div>
-      </label>
-      <div class="accordion-content px-6 md:pl-20">
-        <p class="text-slate-600 leading-relaxed">
-          La freqüència de les nostres visites d’intervenció en psicologia s’ajustarà a la
-          disponibilitat de la família i a les necessitats específiques del menor, i pot ser
-          setmanal, quinzenal o mensual. Aquest ritme flexible permet acompanyar de manera
-          continuada la família i el menor en el procés terapèutic, afavorint la sostenibilitat i
-          l’adherència a la intervenció per generar avenços sostinguts en el temps.
-        </p>
-      </div>
-    </div>
-    <div
-      class="glass-card rounded-xl shadow-sm hover:shadow-md transition-shadow group overflow-hidden"
-    >
-      <input class="accordion-check hidden peer" id="faq-4" type="checkbox" />
-      <label
-        class="flex items-center justify-between w-full p-6 cursor-pointer select-none"
-        for="faq-4"
-      >
-        <div class="flex items-center gap-4">
-          <span class="text-2xl font-light text-slate-300">4</span>
-          <h3 class="text-lg font-bold text-slate-900 group-hover:text-primary transition-colors">
-            Quant costen les visites?
-          </h3>
-        </div>
-        <div
-          class="w-8 h-8 rounded-full bg-teal-soft/20 flex items-center justify-center shrink-0 transition-colors group-hover:bg-teal-soft/40"
-        >
-          <span
-            class="material-symbols-outlined text-teal-deep icon-rotate transition-transform duration-300"
-            >add</span
-          >
-        </div>
-      </label>
-      <div class="accordion-content px-6 md:pl-20">
-        <p class="text-slate-600 leading-relaxed">
-          El cost de les visites variarà segons la seva durada, la tipologia del servei i els
-          objectius plantejats en cada visita. Durant la primera trucada de contacte, es podrà
-          oferir a la família una explicació clara i detallada de les tarifes aplicables, resolent
-          dubtes i garantint transparència per facilitar la planificació del procés i assegurar una
-          comunicació oberta durant tot l’acompanyament en la intervenció infantil o adolescent.
-        </p>
-      </div>
-    </div>
-    <div
-      class="glass-card rounded-xl shadow-sm hover:shadow-md transition-shadow group overflow-hidden"
-    >
-      <input class="accordion-check hidden peer" id="faq-5" type="checkbox" />
-      <label
-        class="flex items-center justify-between w-full p-6 cursor-pointer select-none"
-        for="faq-5"
-      >
-        <div class="flex items-center gap-4">
-          <span class="text-2xl font-light text-slate-300">5</span>
-          <h3 class="text-lg font-bold text-slate-900 group-hover:text-primary transition-colors">
-            Els pares entren a les visites?
-          </h3>
-        </div>
-        <div
-          class="w-8 h-8 rounded-full bg-teal-soft/20 flex items-center justify-center fshrink-0 transition-colors group-hover:bg-teal-soft/40"
-        >
-          <span
-            class="material-symbols-outlined text-teal-deep icon-rotate transition-transform duration-300"
-            >add</span
-          >
-        </div>
-      </label>
-      <div class="accordion-content px-6 md:pl-20">
-        <p class="text-slate-600 leading-herelaxed">
-          A les nostres visites valorem profundament la implicació de la família en tot el procés de
-          valoració i intervenció. En l’atenció primerenca, els progenitors participen activament
-          dins de la sessió d’intervenció infantil. En l’acompanyament a adolescents, es valora la
-          necessitat del menor i de l’entorn familiar, actuant amb flexibilitat per respectar els
-          seus temps, preferències i nivell de comoditat en les diferents visites.
-        </p>
-      </div>
-    </div>
-    <div
-      class="glass-card rounded-xl shadow-sm hover:shadow-md transition-shadow group overflow-hidden"
-    >
-      <input class="accordion-check hidden peer" id="faq-6" type="checkbox" />
-      <label
-        class="flex items-center justify-between w-full p-6 cursor-pointer select-none"
-        for="faq-6"
-      >
-        <div class="flex items-center gap-4">
-          <span class="text-2xl font-light text-slate-300">6</span>
-          <h3 class="text-lg font-bold text-slate-900 group-hover:text-primary transition-colors">
-            Feu visites en context natural (casa, centre educatiu)?
-          </h3>
-        </div>
-        <div
-          class="w-8 h-8 rounded-full bg-teal-soft/20 flex items-center justify-center fshrink-0 transition-colors group-hover:bg-teal-soft/40"
-        >
-          <span
-            class="material-symbols-outlined text-teal-deep icon-rotate transition-transform duration-300"
-            >add</span
-          >
-        </div>
-      </label>
-      <div class="accordion-content px-6 md:pl-20">
-        <p class="text-slate-600 leading-relaxed">
-          Actualment es realitzen de manera puntual algunes visites en context natural, com la llar
-          o el centre educatiu. A mesura que l’equip vagi creixent, podrem ampliar els serveis que
-          oferim, incorporant intervencions més freqüents en entorns naturals. El nostre propòsit és
-          afavorir la generalització dels aprenentatges i de les estratègies treballades a la nostra
-          consulta de psicologia, per a la seva implementació en contextos diferents.
-        </p>
-      </div>
-    </div>
+      ))
+    }
   </div>
 </div>
 <style>
