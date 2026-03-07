@@ -11,7 +11,8 @@ const faq = i18n.faq
     <h1
       class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight"
     >
-      {faq.titlePrefix} <span class="text-primary">{faq.titleHighlight}</span>
+      {faq.titlePrefix}
+      <span class="text-primary">{faq.titleHighlight}</span>
     </h1>
     <p class="text-xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed">
       {faq.intro}
@@ -33,13 +34,10 @@ const faq = i18n.faq
                 {item.question}
               </h3>
             </div>
-            <div
-              class="w-8 h-8 rounded-full bg-teal-soft/20 flex items-center justify-center shrink-0 transition-colors group-hover:bg-teal-soft/40"
-            >
-              <span
-                class="material-symbols-outlined text-teal-deep icon-rotate transition-transform duration-300"
-                >add</span
-              >
+            <div class="w-8 h-8 rounded-full bg-teal-soft/20 flex items-center justify-center shrink-0 transition-colors group-hover:bg-teal-soft/40">
+              <span class="material-symbols-outlined text-teal-deep icon-rotate transition-transform duration-300">
+                add
+              </span>
             </div>
           </label>
           <div class="accordion-content px-6 md:pl-20">

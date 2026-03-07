@@ -23,9 +23,7 @@ const memberPhotos = [
     <div class="grid lg:grid-cols-2 gap-8">
       {
         team.members.map((member, index) => (
-          <div
-            class="bg-white p-6 rounded-3xl shadow-sm border border-accent/20 flex flex-col md:flex-row gap-8 items-start hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1"
-          >
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-accent/20 flex flex-col md:flex-row gap-8 items-start hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1">
             <div class="shrink-0 w-full md:w-48 lg:w-40 xl:w-48">
               <img
                 alt={member.imageAlt}
@@ -38,41 +36,38 @@ const memberPhotos = [
                 <h3 class="text-2xl font-bold text-slate-900">{member.name}</h3>
                 <p class="text-primary font-semibold text-sm">{member.role}</p>
               </div>
-              <p
-                class="text-slate-600 text-sm leading-relaxed italic border-l-2 border-primary/20 pl-4"
-              >
+              <p class="text-slate-600 text-sm leading-relaxed italic border-l-2 border-primary/20 pl-4">
                 {member.quote}
               </p>
               <div class="space-y-3">
-                <h4
-                  class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2"
-                >
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
                   <span class="material-symbols-outlined text-secondary text-base">verified</span>
                   {team.trajectoryLabel}
                 </h4>
                 <ul class="space-y-2 text-sm">
                   {member.experience.map((item) => (
                     <li class="flex gap-3">
-                      <span class="material-symbols-outlined text-secondary text-sm mt-0.5"
-                        >check_circle</span
-                      >
+                      <span class="material-symbols-outlined text-secondary text-sm mt-0.5">
+                        check_circle
+                      </span>
                       <span class="text-slate-600">{item}</span>
                     </li>
                   ))}
                   <li class="flex gap-3">
-                    <span class="material-symbols-outlined text-secondary text-sm mt-0.5"
-                      >check_circle</span
-                    >
-                    <span class="text-slate-600"
-                      ><a
+                    <span class="material-symbols-outlined text-secondary text-sm mt-0.5">
+                      check_circle
+                    </span>
+                    <span class="text-slate-600">
+                      <a
                         class="text-primary"
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://www.esdm.co/esdm-therapists"
                       >
                         {member.certificateLinkLabel}
-                      </a> {member.certificateSuffix}</span
-                    >
+                      </a>{' '}
+                      {member.certificateSuffix}
+                    </span>
                   </li>
                 </ul>
               </div>
