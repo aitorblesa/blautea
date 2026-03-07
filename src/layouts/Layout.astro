@@ -13,7 +13,13 @@ const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 
 const siteUrl = 'https://blautea.vercel.app'
-const ogImage = `${siteUrl}/og.webp`
+
+const ogImages: Record<string, string> = {
+  ca: `${siteUrl}/og.webp`,
+  es: `${siteUrl}/og-es.webp`,
+  en: `${siteUrl}/og-en.webp`,
+}
+const ogImage = ogImages[currentLocale ?? 'ca'] ?? ogImages['ca']
 ---
 
 <!doctype html>
@@ -28,18 +34,17 @@ const ogImage = `${siteUrl}/og.webp`
     <meta name="author" content={i18n.meta.author} />
     <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={siteUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content={currentLocale ?? 'ca'} />
     <meta property="og:site_name" content="Blautea" />
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={siteUrl} />
     <meta name="twitter:title" content={title} />
