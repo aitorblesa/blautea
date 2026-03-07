@@ -6,9 +6,12 @@ const i18n = getI18N({ currentLocale })
 const cards = i18n.heroCards.items
 ---
 
-<section class="w-full bg-background-light pb-24 px-6">
+<section class="fade-in-section w-full bg-background-light pb-24 px-6">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 -mt-12">
-    <div class="glass-card p-8 rounded-3xl group hover:border-primary/50 transition-colors">
+    <div
+      class="fade-in-section glass-card p-8 rounded-3xl group hover:border-primary/50 transition-colors"
+      style="--fade-delay: 80ms;"
+    >
       <div
         class="w-12 h-12 bg-secondary/20 rounded-2xl flex items-center justify-center text-secondary mb-6 group-hover:scale-110 transition-transform"
       >
@@ -19,7 +22,10 @@ const cards = i18n.heroCards.items
         {cards[0].description}
       </p>
     </div>
-    <div class="glass-card p-8 rounded-3xl group hover:border-primary/50 transition-colors">
+    <div
+      class="fade-in-section glass-card p-8 rounded-3xl group hover:border-primary/50 transition-colors"
+      style="--fade-delay: 160ms;"
+    >
       <div
         class="w-12 h-12 bg-secondary/20 rounded-2xl flex items-center justify-center text-secondary mb-6 group-hover:scale-110 transition-transform"
       >
@@ -30,7 +36,10 @@ const cards = i18n.heroCards.items
         {cards[1].description}
       </p>
     </div>
-    <div class="glass-card p-8 rounded-3xl group hover:border-primary/50 transition-colors">
+    <div
+      class="fade-in-section glass-card p-8 rounded-3xl group hover:border-primary/50 transition-colors"
+      style="--fade-delay: 240ms;"
+    >
       <div
         class="w-12 h-12 bg-secondary/20 rounded-2xl flex items-center justify-center text-secondary mb-6 group-hover:scale-110 transition-transform"
       >
