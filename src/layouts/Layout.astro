@@ -11,6 +11,9 @@ interface Props {
 const { title, description } = Astro.props
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
+
+const siteUrl = 'https://blautea.vercel.app'
+const ogImage = `${siteUrl}/og.webp`
 ---
 
 <!doctype html>
@@ -24,14 +27,29 @@ const i18n = getI18N({ currentLocale })
     <meta name="keywords" content={i18n.meta.keywords} />
     <meta name="author" content={i18n.meta.author} />
     <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
-    <meta name="bingbot" content="index, follow" />
-    <meta name="yandexbot" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={currentLocale ?? 'ca'} />
+    <meta property="og:site_name" content="Blautea" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={siteUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
       rel="stylesheet"
     />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
@@ -42,7 +60,6 @@ const i18n = getI18N({ currentLocale })
     <slot />
   </body>
 </html>
-
 <style>
   @font-face {
     font-family: 'Plus Jakarta Sans';

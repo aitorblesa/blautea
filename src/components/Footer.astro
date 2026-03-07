@@ -11,12 +11,13 @@ const i18n = getI18N({ currentLocale })
       <div class="col-span-2">
         <div class="flex gap-3 mb-6 items-end">
           <img alt={i18n.header.logoAlt} class="h-16" src="/BlauteaLogo.webp" />
-          <a
-            class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-primary transition-colors"
-            href="#"
+          <button
+            id="share-btn"
+            class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-primary transition-colors cursor-pointer"
+            aria-label="Compartir"
           >
             <span class="material-symbols-outlined">share</span>
-          </a>
+          </button>
         </div>
         <p class="text-slate-500 max-w-sm mb-6 leading-relaxed">
           {i18n.footer.description}
@@ -29,34 +30,47 @@ const i18n = getI18N({ currentLocale })
             <a
               class="hover:text-primary transition-colors flex items-center gap-2"
               href={`#${i18n.header.servicesRef}`}
-              ><span class="material-symbols-outlined text-sm">chevron_right</span>{i18n.header.services}</a
             >
+              <span class="material-symbols-outlined text-sm">chevron_right</span>{
+                i18n.header.services
+              }
+            </a>
           </li>
           <li>
             <a
               class="hover:text-primary transition-colors flex items-center gap-2"
               href={`#${i18n.header.methodologyRef}`}
-              ><span class="material-symbols-outlined text-sm">chevron_right</span>{i18n.header.methodology}</a
             >
+              <span class="material-symbols-outlined text-sm">chevron_right</span>{
+                i18n.header.methodology
+              }
+            </a>
           </li>
           <li>
-            <a class="hover:text-primary transition-colors flex items-center gap-2" href={`#${i18n.header.teamRef}`}
-              ><span class="material-symbols-outlined text-sm">chevron_right</span>{i18n.header.team}</a
+            <a
+              class="hover:text-primary transition-colors flex items-center gap-2"
+              href={`#${i18n.header.teamRef}`}
             >
+              <span class="material-symbols-outlined text-sm">chevron_right</span>{i18n.header.team}
+            </a>
           </li>
           <li>
             <a
               class="hover:text-primary transition-colors flex items-center gap-2"
               href={`#${i18n.header.contactRef}`}
-              ><span class="material-symbols-outlined text-sm">chevron_right</span>{i18n.header.contact}</a
             >
+              <span class="material-symbols-outlined text-sm">chevron_right</span>{
+                i18n.header.contact
+              }
+            </a>
           </li>
           <li>
             <a
               class="hover:text-primary transition-colors flex items-center gap-2"
               href={`#${i18n.header.faqsRef}`}
-              ><span class="material-symbols-outlined text-sm">chevron_right</span>{i18n.header.faqs}</a
             >
+              <span class="material-symbols-outlined text-sm">chevron_right</span>{i18n.header.faqs}
+            </a>
           </li>
         </ul>
       </div>
@@ -66,3 +80,30 @@ const i18n = getI18N({ currentLocale })
     </div>
   </div>
 </footer>
+
+<script>
+  const btn = document.getElementById('share-btn')
+
+  btn?.addEventListener('click', async () => {
+    const shareData = {
+      title: document.title,
+      text: document.querySelector('meta[name="description"]')?.getAttribute('content') ?? '',
+      url: window.location.href,
+    }
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData)
+      } catch (err) {
+        // Usuario canceló, no hacemos nada
+      }
+    } else {
+      // Fallback: copiar al portapapeles
+      await navigator.clipboard.writeText(window.location.href)
+      btn.querySelector('span')!.textContent = 'check'
+      setTimeout(() => {
+        btn.querySelector('span')!.textContent = 'share'
+      }, 2000)
+    }
+  })
+</script>
